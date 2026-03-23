@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame by Frame — Audience Rating Patterns in Film</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Film strip top decoration -->
+  <div class="filmstrip top">
+    <div class="holes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg-text" aria-hidden="true">CINEMA</div>
+    <div class="hero-inner">
+      <div class="tag-line"><span class="mono">DS 4200 · Data Visualization</span></div>
+      <h1>Frame<br /><em>by</em><br />Frame</h1>
+      <p class="hero-sub">Exploring audience rating patterns &amp; genre trends in film data</p>
+      <div class="hero-credits">
+        <span>Saeyoung</span><span class="dot">·</span>
+        <span>Zach</span><span class="dot">·</span>
+        <span>Logan</span>
+      </div>
+    </div>
+    <div class="scroll-hint mono">scroll ↓</div>
+  </header>
+
+  <!-- Context band -->
+  <section class="context-band">
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-num">$11.9B</span>
+        <span class="stat-label">Peak box office (2018)</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">$8.7B</span>
+        <span class="stat-label">Domestic box office (2025)</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat decline">
+        <span class="stat-num">−27%</span>
+        <span class="stat-label">Revenue decline since peak</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">10,003</span>
+        <span class="stat-label">Films analyzed</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="section intro-section">
+      <div class="section-inner two-col">
+        <div class="col-text">
+          <span class="section-label mono">Introduction</span>
+          <h2>Why do audiences choose what they watch?</h2>
+          <p>As streaming overtakes the theater experience and ticket prices climb, studios face a data-rich opportunity to understand what drives viewership and ratings. Using Letterboxd — the social platform where film enthusiasts log, rate, and discover movies — we analyze <strong>10,003 films</strong> to surface patterns that explain audience behavior.</p>
+          <p>Our analysis draws on a Kaggle dataset (<em>10,000 Movies + Letterboxd Data</em>) containing 29 columns of metadata: director, cast, genre, description, average rating, list appearances, and more.</p>
+        </div>
+        <div class="col-callout">
+          <div class="callout-card">
+            <div class="callout-icon">🎬</div>
+            <p class="callout-body">To recover from a significant decline in theater viewership, studios can turn to data to discover <em>what makes a movie popular</em>.</p>
+          </div>
+          <div class="source-links">
+            <span class="mono source-title">Reference Papers</span>
+            <a class="source-link" href="#">Are Movie Theaters Dying? <span class="mono">↗ Lennon, 2025</span></a>
+            <a class="source-link" href="#">What Does It Take For a Movie To Be Successful? <span class="mono">↗ Marsh, 2025</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Questions -->
+    <section class="section questions-section">
+      <div class="section-inner">
+        <span class="section-label mono">Research Questions</span>
+        <h2>Four lenses on film audience behavior</h2>
+        <div class="questions-grid">
+
+          <div class="q-card" data-num="01">
+            <div class="q-num mono">01</div>
+            <h3>List curation &amp; language</h3>
+            <p>Does list curation differ between English and non-English cinema? We hypothesize that non-English films require "list endorsement" to get watched, while English films attract casual viewers.</p>
+            <div class="q-vars">
+              <span class="var-tag">Language</span>
+              <span class="var-tag">List appearances</span>
+              <span class="var-tag">Watch count</span>
+            </div>
+          </div>
+
+          <div class="q-card" data-num="02">
+            <div class="q-num mono">02</div>
+            <h3>What drives viewership?</h3>
+            <p>Analyzing the impact of film characteristics on audience reach — from runtime and genre to director reputation and language.</p>
+            <div class="q-vars">
+              <span class="var-tag">Runtime</span>
+              <span class="var-tag">Genre</span>
+              <span class="var-tag">Director</span>
+              <span class="var-tag">Avg rating</span>
+            </div>
+          </div>
+
+          <div class="q-card highlight" data-num="03">
+            <div class="q-num mono">03</div>
+            <h3>Genre rating polarization</h3>
+            <p>Do certain genres show higher rating polarization? Horror is the classic example — viewers either love it or hate it. We compute variance across the full 10-point star distribution.</p>
+            <div class="q-vars">
+              <span class="var-tag">Genre</span>
+              <span class="var-tag">Star rating spread</span>
+              <span class="var-tag">Variance</span>
+            </div>
+          </div>
+
+          <div class="q-card" data-num="04">
+            <div class="q-num mono">04</div>
+            <h3>Likable vs. highly rated</h3>
+            <p>Are some genres more "likable" than "highly rated"? A film can rack up likes while sitting at a middling average — a meaningful distinction for marketing.</p>
+            <div class="q-vars">
+              <span class="var-tag">Likes</span>
+              <span class="var-tag">Watch count</span>
+              <span class="var-tag">Avg rating</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizations placeholder -->
+    <section class="section viz-section">
+      <div class="section-inner">
+        <span class="section-label mono">Visualizations</span>
+        <h2>The findings</h2>
+        <div class="viz-grid">
+
+          <div class="viz-card tall">
+            <div class="viz-placeholder">
+              <div class="viz-icon">📊</div>
+              <p class="mono">Genre Polarization Chart</p>
+              <span class="viz-sub">Top 15 most polarizing genres by rating variance</span>
+            </div>
+            <div class="viz-meta">
+              <span class="mono viz-num">01</span>
+              <h4>Rating Variance by Genre</h4>
+              <p>Horizontal bar chart showing which genres produce the most divided audiences, paired with a full rating distribution breakdown.</p>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <div class="viz-placeholder small">
+              <div class="viz-icon">🌐</div>
+              <p class="mono">Language &amp; Lists</p>
+            </div>
+            <div class="viz-meta">
+              <span class="mono viz-num">02</span>
+              <h4>English vs. Non-English Curation</h4>
+              <p>Comparing list-to-watch ratios across language groups to surface discovery patterns.</p>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <div class="viz-placeholder small">
+              <div class="viz-icon">🔵</div>
+              <p class="mono">Scatter Plot</p>
+            </div>
+            <div class="viz-meta">
+              <span class="mono viz-num">03</span>
+              <h4>Rating vs. Total Ratings</h4>
+              <p>Scatter plot of average rating against total number of ratings, segmented by genre.</p>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <div class="viz-placeholder small">
+              <div class="viz-icon">❤️</div>
+              <p class="mono">Likability Index</p>
+            </div>
+            <div class="viz-meta">
+              <span class="mono viz-num">04</span>
+              <h4>Likes-to-Watches Ratio</h4>
+              <p>Comparing likability vs. critical rating across genres — do audiences "like" what they rate highly?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section team-section">
+      <div class="section-inner">
+        <span class="section-label mono">The Team</span>
+        <h2>Individual duties</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-initial">S + Z</div>
+            <h3>Saeyoung &amp; Zach</h3>
+            <p>Analysis &amp; storytelling — developing ideas to effectively visualize findings, ensuring visuals are clear and digestible while providing comprehensive insight into outcomes.</p>
+            <span class="role-tag">Analysis · Storytelling · Design direction</span>
+          </div>
+          <div class="team-card">
+            <div class="team-initial">L</div>
+            <h3>Logan</h3>
+            <p>Technical lead — building and deploying the web app that hosts all data visualizations, plus contributing to the development of individual charts.</p>
+            <span class="role-tag">Web development · Data visualization · Deployment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data source footer band -->
+    <section class="data-band">
+      <div class="section-inner">
+        <span class="mono data-label">Dataset</span>
+        <p class="data-desc">Sourced from <strong>Kaggle</strong> — <em>10,000 Movies + Letterboxd Data</em>. 10,003 unique films, 29 columns including director, cast, genre, description, average rating, list appearances, and more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="filmstrip bottom">
+      <div class="holes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="footer-inner">
+      <span class="mono footer-copy">Frame by Frame · DS 4200 · 2025</span>
+      <span class="mono footer-copy">Data source: Letterboxd via Kaggle</span>
+    </div>
+  </footer>
+
+</body>
+</html>

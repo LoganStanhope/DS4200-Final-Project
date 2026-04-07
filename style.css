@@ -167,6 +167,18 @@ strong { font-weight: 600; }
 
 /* Viz Section */
 .viz-section { background: var(--white); }
+
+.viz-block { margin-bottom: 56px; }
+.viz-block h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.viz-desc { margin: 0 0 16px; color: var(--text-muted); font-size: 0.95rem; }
+.viz-img-wrap img {
+  width: 100%; max-width: 960px; height: auto;
+  border: 1px solid var(--border); border-radius: 8px; display: block;
+}
+.viz-iframe-wrap iframe {
+  width: 100%; max-width: 960px; height: 560px;
+  border: 1px solid var(--border); border-radius: 8px; display: block;
+}
 .viz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .viz-card.tall { grid-column: 1; grid-row: 1 / 3; }
 @media (max-width: 860px) {

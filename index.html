@@ -135,12 +135,75 @@
       </div>
     </section>
 
-    <!-- Visualizations placeholder -->
+    <!-- Visualizations -->
     <section class="section viz-section">
       <div class="section-inner">
         <span class="section-label mono">Visualizations</span>
-        <h2>The findings...</h2>
-        <h3>Coming soon...</h3>
+        <h2>The findings</h2>
+
+        <!-- V1: Genre polarization (Logan) -->
+        <div class="viz-block">
+          <h3>Genre rating polarization &amp; distribution</h3>
+          <p class="viz-desc">The 15 genres with the highest variance in star ratings, alongside their full rating distributions.</p>
+          <div class="viz-img-wrap">
+            <img src="images/genre_polarization.png" alt="Genre polarization and rating distribution chart" />
+          </div>
+        </div>
+
+        <!-- V2: Rating vs reviews quadrant scatter (Zach — interactive) -->
+        <div class="viz-block">
+          <h3>Rating vs. review volume — quadrant analysis</h3>
+          <p class="viz-desc">Top 150 most-reviewed films mapped by average rating and review count, clustered into four audience quadrants. Hover for details.</p>
+          <div class="viz-iframe-wrap">
+            <iframe src="images/scatter_rating_reviews.html" title="Scatter plot: rating vs reviews"></iframe>
+          </div>
+        </div>
+
+        <!-- V3: Average rating by genre (Zach) -->
+        <div class="viz-block">
+          <h3>Average rating by genre (popular films)</h3>
+          <p class="viz-desc">Mean rating per genre for films with more than 500,000 reviews, with film counts annotated.</p>
+          <div class="viz-img-wrap">
+            <img src="images/genre_avg_rating.png" alt="Average rating by genre bar chart" />
+          </div>
+        </div>
+
+        <!-- V4: Rating distribution histogram (Zach) -->
+        <div class="viz-block">
+          <h3>Distribution of average ratings</h3>
+          <p class="viz-desc">Overall distribution of average ratings across all 10,003 films, with the median marked.</p>
+          <div class="viz-img-wrap">
+            <img src="images/rating_distribution.png" alt="Histogram of average movie ratings" />
+          </div>
+        </div>
+
+        <!-- V5: Rating by language (Zach) -->
+        <div class="viz-block">
+          <h3>Average rating by language</h3>
+          <p class="viz-desc">Mean rating for the top 10 most-represented original languages in the dataset.</p>
+          <div class="viz-img-wrap">
+            <img src="images/rating_by_language.png" alt="Average movie rating by language bar chart" />
+          </div>
+        </div>
+
+        <!-- V6: Language scatter — rating vs watches (Saeyoung — interactive) -->
+        <div class="viz-block">
+          <h3>Average rating vs. watch count by language</h3>
+          <p class="viz-desc">Top 20 languages compared across total watch count and average rating. Click a point to highlight. Left panel includes English; right panel excludes it for scale.</p>
+          <div class="viz-iframe-wrap">
+            <iframe src="images/language_rating_scatter.html" title="Scatter: rating vs watches by language"></iframe>
+          </div>
+        </div>
+
+        <!-- V7: Top 10 films by language & genre (Saeyoung — interactive) -->
+        <div class="viz-block">
+          <h3>Top 10 rated films by language &amp; genre</h3>
+          <p class="viz-desc">Use the dropdowns to explore the highest-rated films for any combination of original language and genre.</p>
+          <div class="viz-iframe-wrap">
+            <iframe src="images/top_films_by_language.html" title="Top 10 films by language and genre"></iframe>
+          </div>
+        </div>
+
       </div>
     </section>
 

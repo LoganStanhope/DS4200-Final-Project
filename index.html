@@ -144,64 +144,52 @@
         <!-- V1: Genre polarization (Logan) -->
         <div class="viz-block">
           <h3>Genre rating polarization &amp; distribution</h3>
-          <p class="viz-desc">The 15 genres with the highest variance in star ratings, alongside their full rating distributions.</p>
+          <p class="viz-desc">Shows how strongly audiences disagree across genres using rating variance and full star distributions. Use it to identify which genres are most polarizing versus most consensus-driven.</p>
           <div class="viz-img-wrap">
             <img src="images/genre_polarization.png" alt="Genre polarization and rating distribution chart" />
           </div>
+          <p class="viz-note">This visual highlights audience disagreement by genre. Documentary, Western, War, and History appear among the most polarizing categories, while broadly mainstream genres show tighter rating concentration. Across all genres, most ratings still cluster between three and four stars, suggesting that polarization is driven by stronger tails rather than completely different rating centers.</p>
         </div>
 
         <!-- V2: Rating vs reviews quadrant scatter (Zach — interactive) -->
         <div class="viz-block">
           <h3>Rating vs. review volume — quadrant analysis</h3>
-          <p class="viz-desc">Top 150 most-reviewed films mapped by average rating and review count, clustered into four audience quadrants. Hover for details.</p>
+          <p class="viz-desc">Shows the relationship between audience rating and review volume for the 150 most-reviewed films. Use hover to inspect the exact film-level values within each quadrant.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/scatter_rating_reviews.html" title="Scatter plot: rating vs reviews"></iframe>
           </div>
+          <p class="viz-note">This chart compares popularity and quality for the 150 most-reviewed films. The median split creates four quadrants that separate acclaimed blockbusters, commercial triumphs, cult classics, and underperformers. Hover interactions reveal title-level detail so viewers can inspect which films drive each cluster.</p>
         </div>
 
-        <!-- V3: Average rating by genre (Zach) -->
-        <div class="viz-block">
-          <h3>Average rating by genre (popular films)</h3>
-          <p class="viz-desc">Mean rating per genre for films with more than 500,000 reviews, with film counts annotated.</p>
-          <div class="viz-img-wrap">
-            <img src="images/genre_avg_rating.png" alt="Average rating by genre bar chart" />
-          </div>
-        </div>
 
         <!-- V4: Rating distribution histogram (Zach) -->
         <div class="viz-block">
           <h3>Distribution of average ratings</h3>
-          <p class="viz-desc">Overall distribution of average ratings across all 10,003 films, with the median marked.</p>
+          <p class="viz-desc">Shows the overall distribution of average ratings across all films, with the median marked as a reference. Use it to see where most films cluster and how frequent rating extremes are.</p>
           <div class="viz-img-wrap">
             <img src="images/rating_distribution.png" alt="Histogram of average movie ratings" />
           </div>
-        </div>
-
-        <!-- V5: Rating by language (Zach) -->
-        <div class="viz-block">
-          <h3>Average rating by language</h3>
-          <p class="viz-desc">Mean rating for the top 10 most-represented original languages in the dataset.</p>
-          <div class="viz-img-wrap">
-            <img src="images/rating_by_language.png" alt="Average movie rating by language bar chart" />
-          </div>
+          <p class="viz-note">The histogram shows a concentration of films around the 3.0 to 3.5 range, with fewer titles at the extremes. Very low ratings are uncommon and near-perfect ratings are rarer, creating a distribution centered around moderately positive audience reception.</p>
         </div>
 
         <!-- V6: Language scatter — rating vs watches (Saeyoung — interactive) -->
         <div class="viz-block">
           <h3>Average rating vs. watch count by language</h3>
-          <p class="viz-desc">Top 20 languages compared across total watch count and average rating. Click a point to highlight. Left panel includes English; right panel excludes it for scale.</p>
+          <p class="viz-desc">Shows how language compares across watch volume and average rating for the top 20 groups. Use the side-by-side panels to compare the full view with and without the English outlier.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/language_rating_scatter.html" title="Scatter: rating vs watches by language"></iframe>
           </div>
+          <p class="viz-note">This view compares rating and total watches across the top 20 languages. English dominates watch volume, while many non-English languages cluster at slightly higher average ratings. The side-by-side design makes the non-English spread easier to read by removing the English outlier in the right panel.</p>
         </div>
 
         <!-- V7: Top 10 films by language & genre (Saeyoung — interactive) -->
         <div class="viz-block">
           <h3>Top 10 rated films by language &amp; genre</h3>
-          <p class="viz-desc">Use the dropdowns to explore the highest-rated films for any combination of original language and genre.</p>
+          <p class="viz-desc">Shows the top 10 highest-rated films for the selected language and genre combination. Use the dropdown filters to quickly switch contexts and compare ranked results.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/top_films_by_language.html" title="Top 10 films by language and genre"></iframe>
           </div>
+          <p class="viz-note">This interactive ranking updates to the selected language and genre, showing the top 10 films by average rating. The gradient emphasizes ordering, while labels and tooltips provide quick detail for comparison across language and genre combinations.</p>
         </div>
 
       </div>

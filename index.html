@@ -140,6 +140,7 @@
       <div class="section-inner">
         <span class="section-label mono">Visualizations</span>
         <h2>The findings</h2>
+        <p class="viz-overview">All visuals include clear titles and axis labels, and legends are included where color grouping is needed.</p>
 
         <!-- V1: Genre polarization (Logan) -->
         <div class="viz-block">
@@ -148,7 +149,7 @@
           <div class="viz-img-wrap">
             <img src="images/genre_polarization.png" alt="Genre polarization and rating distribution chart" />
           </div>
-          <p class="viz-note">This visual highlights audience disagreement by genre. Documentary, Western, War, and History appear among the most polarizing categories, while broadly mainstream genres show tighter rating concentration. Across all genres, most ratings still cluster between three and four stars, suggesting that polarization is driven by stronger tails rather than completely different rating centers.</p>
+          <p class="viz-note"><strong>Takeaway:</strong> Audience disagreement is highest in Documentary, Western, War, and History, while mainstream genres show tighter consensus. Most genres still cluster between three and four stars, so polarization comes from the tails of the distribution rather than a totally different center.</p>
         </div>
 
         <!-- V2: Rating vs reviews quadrant scatter (Zach — interactive) -->
@@ -158,7 +159,7 @@
           <div class="viz-iframe-wrap">
             <iframe src="images/scatter_rating_reviews.html" title="Scatter plot: rating vs reviews"></iframe>
           </div>
-          <p class="viz-note">This chart compares popularity and quality for the 150 most-reviewed films. The median split creates four quadrants that separate acclaimed blockbusters, commercial triumphs, cult classics, and underperformers. Hover interactions reveal title-level detail so viewers can inspect which films drive each cluster.</p>
+          <p class="viz-note"><strong>Takeaway:</strong> Popularity and quality are related but not identical: films split into meaningful groups of acclaimed blockbusters, commercial triumphs, cult classics, and underperformers. The quadrant view shows that high attention does not always imply top audience ratings.</p>
         </div>
 
 
@@ -169,7 +170,7 @@
           <div class="viz-img-wrap">
             <img src="images/rating_distribution.png" alt="Histogram of average movie ratings" />
           </div>
-          <p class="viz-note">The histogram shows a concentration of films around the 3.0 to 3.5 range, with fewer titles at the extremes. Very low ratings are uncommon and near-perfect ratings are rarer, creating a distribution centered around moderately positive audience reception.</p>
+          <p class="viz-note"><strong>Takeaway:</strong> Most films receive moderately positive ratings concentrated around 3.0 to 3.5. Extremely low and near-perfect ratings are uncommon, indicating that audience reception is usually mixed-to-positive rather than extreme.</p>
         </div>
 
         <!-- V6: Language scatter — rating vs watches (Saeyoung — interactive) -->
@@ -179,7 +180,7 @@
           <div class="viz-iframe-wrap">
             <iframe src="images/language_rating_scatter.html" title="Scatter: rating vs watches by language"></iframe>
           </div>
-          <p class="viz-note">This view compares rating and total watches across the top 20 languages. English dominates watch volume, while many non-English languages cluster at slightly higher average ratings. The side-by-side design makes the non-English spread easier to read by removing the English outlier in the right panel.</p>
+          <p class="viz-note"><strong>Takeaway:</strong> English-language films dominate total watch volume, but many non-English languages cluster at slightly higher average ratings. This suggests reach and perceived quality can diverge by language market.</p>
         </div>
 
         <!-- V7: Top 10 films by language & genre (Saeyoung — interactive) -->
@@ -189,9 +190,30 @@
           <div class="viz-iframe-wrap">
             <iframe src="images/top_films_by_language.html" title="Top 10 films by language and genre"></iframe>
           </div>
-          <p class="viz-note">This interactive ranking updates to the selected language and genre, showing the top 10 films by average rating. The gradient emphasizes ordering, while labels and tooltips provide quick detail for comparison across language and genre combinations.</p>
+          <p class="viz-note"><strong>Takeaway:</strong> Top-rated films vary substantially across language and genre filters, showing that "best" films are context-dependent. The interactive ranking helps users identify strong options within their preferred viewing profile.</p>
         </div>
 
+      </div>
+    </section>
+
+    <section class="section summary-section">
+      <div class="section-inner">
+        <span class="section-label mono">Final Findings</span>
+        <h2>What we learned and what to do next</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>Conclusion 1: Popularity is not quality</h3>
+            <p>The quadrant analysis shows that review volume and rating quality move together only partially. Some films are highly visible without being top-rated, while others are highly rated with narrower reach.</p>
+          </div>
+          <div class="summary-card">
+            <h3>Conclusion 2: Polarization is genre-specific</h3>
+            <p>Genres tied to stronger cultural or thematic preferences show wider disagreement in ratings. This implies genre strategy should balance broad-appeal titles with niche titles that generate high engagement among specific audiences.</p>
+          </div>
+          <div class="summary-card">
+            <h3>Conclusion 3: Language patterns reveal market opportunities</h3>
+            <p>English leads in volume, while several non-English segments perform strongly in average rating. Future work should examine time trends and recommendation pathways to better connect high-rated non-English films with broader audiences.</p>
+          </div>
+        </div>
       </div>
     </section>
 

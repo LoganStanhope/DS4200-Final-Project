@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rating Distribution</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body { font-family: Arial; }
+  </style>
+</head>
+<body>
+
+<h2>Distribution of Movie Ratings (All Movies)</h2>
+<div id="chart"></div>
+
+<script>
+
+d3.csv("Movie_Data_File.csv").then(function(data) {
+
+  // clean
+  data.forEach(d => {
+    d.rating = +d.Average_rating;
+  });
+
+  const ratings = data
+    .map(d => d.rating)
+    .filter(d => !isNaN(d));
+
+  const width = 800;
+  const height = 500;
+  const margin = {top: 40, right: 40, bottom: 60, left: 70};
+
+  const svg = d3.select("#chart")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // x scale
+  const x = d3.scaleLinear()
+    .domain(d3.extent(ratings))
+    .nice()
+    .range([margin.left, width - margin.right]);
+
+  // histogram bins
+  const bins = d3.bin()
+    .domain(x.domain())
+    .thresholds(20)(ratings);
+
+  // y scale
+  const y = d3.scaleLinear()
+    .domain([0, d3.max(bins, d => d.length)])
+    .nice()
+    .range([height - margin.bottom, margin.top]);
+
+  // bars
+  svg.selectAll("rect")
+    .data(bins)
+    .enter()
+    .append("rect")
+    .attr("x", d => x(d.x0))
+    .attr("y", d => y(d.length))
+    .attr("width", d => x(d.x1) - x(d.x0) - 1)
+    .attr("height", d => y(0) - y(d.length))
+    .attr("fill", "steelblue");
+
+  // median
+  const median = d3.median(ratings);
+
+  svg.append("line")
+    .attr("x1", x(median))
+    .attr("x2", x(median))
+    .attr("y1", margin.top)
+    .attr("y2", height - margin.bottom)
+    .attr("stroke", "black")
+    .attr("stroke-dasharray", "5,5");
+
+  // median label
+  svg.append("text")
+    .attr("x", x(median) - 5)
+    .attr("y", margin.top + 15)
+    .attr("text-anchor", "end")
+    .text("Median: " + median.toFixed(2));
+
+  // axes
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x));
+
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y));
+
+  // labels
+  svg.append("text")
+    .attr("x", width/2)
+    .attr("y", height - 10)
+    .attr("text-anchor", "middle")
+    .text("Average Rating");
+
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height/2)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .text("Number of Movies");
+
+});
+
+</script>
+
+</body>
+</html>

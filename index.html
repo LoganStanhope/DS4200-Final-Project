@@ -173,6 +173,16 @@
           <p class="viz-note"><strong>Takeaway:</strong> The histogram indicates the market baseline: most films land in a narrow middle band around 3.0 to 3.5 ratings. From a box office perspective, this means "average" quality is common and rarely enough on its own to drive standout theatrical performance. To outperform, a film typically needs either stronger quality momentum (moving right in the distribution) or stronger reach mechanisms such as franchise familiarity, star power, or superior campaign execution. The relative scarcity of extreme low and extreme high ratings also suggests that incremental gains matter, since moving from "good" to "very good" can materially improve word-of-mouth and repeat viewing. Teams can use this distribution as a benchmark to set realistic pre-release targets for test screenings and post-launch audience sentiment.</p>
         </div>
 
+        <!-- V5: D3 rating distribution -->
+        <div class="viz-block">
+          <h3>Distribution of movie ratings (D3 view)</h3>
+          <p class="viz-desc">Shows the same rating distribution using a D3 implementation, including bin structure, axes, and median marker. Use it to validate patterns seen in the static histogram and compare how presentation affects interpretation.</p>
+          <div class="viz-iframe-wrap">
+            <iframe src="d3vis.html" title="D3 histogram of movie ratings"></iframe>
+          </div>
+          <p class="viz-note"><strong>Takeaway:</strong> Embedding the D3 view confirms the central pattern that most films cluster in the middle of the rating range, with relatively few extreme outcomes. The median marker reinforces where audience sentiment is concentrated, which is useful for setting realistic quality targets before release. For box office strategy, this means teams should not rely on "average" reception alone, but instead combine baseline quality with stronger positioning, timing, and campaign execution to move titles into higher-performing outcomes.</p>
+        </div>
+
         <!-- V6: Language scatter — rating vs watches (Saeyoung — interactive) -->
         <div class="viz-block">
           <h3>Average rating vs. watch count by language</h3>

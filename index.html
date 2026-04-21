@@ -10,12 +10,10 @@
 </head>
 <body>
 
-  <!-- Film strip top decoration -->
   <div class="filmstrip top">
     <div class="holes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   </div>
 
-  <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
       <div class="tag-line"><span class="mono">DS 4200 · Data Visualization</span></div>
@@ -29,7 +27,6 @@
     </div>
   </header>
 
-  <!-- Context band -->
   <section class="context-band">
     <div class="stat-row">
       <div class="stat">
@@ -56,7 +53,6 @@
 
   <main>
 
-    <!-- Introduction -->
     <section class="section intro-section">
       <div class="section-inner two-col">
         <div class="col-text">
@@ -79,7 +75,6 @@
       </div>
     </section>
 
-    <!-- Research Questions -->
     <section class="section questions-section">
       <div class="section-inner">
         <span class="section-label mono">Research Questions</span>
@@ -135,14 +130,27 @@
       </div>
     </section>
 
-    <!-- Visualizations -->
     <section class="section viz-section">
       <div class="section-inner">
         <span class="section-label mono">Visualizations</span>
         <h2>The findings</h2>
         <p class="viz-overview">All visuals include clear titles and axis labels, and legends are included where color grouping is needed.</p>
 
-        <!-- V1: Genre polarization (Logan) -->
+        <!-- V1 (formerly V3): D3 rating distribution — moved first as baseline context -->
+        <div class="viz-block">
+          <h3>Distribution of movie ratings (D3 view)</h3>
+          <p class="viz-desc">Shows the overall distribution of ratings across all 10,003 films with bin structure, axes, and median marker. Use it as a baseline before interpreting the genre-level and quadrant analyses that follow.</p>
+          <div class="viz-iframe-wrap">
+            <iframe src="d3vis.html" title="D3 histogram of movie ratings"></iframe>
+          </div>
+          <p class="viz-note"><strong>Takeaway:</strong> Embedding the D3 view confirms the central pattern that most films cluster 
+            in the middle of the rating range, with relatively few extreme outcomes. The median marker reinforces where audience sentiment 
+            is concentrated, which is useful for setting realistic quality targets before release. For box office strategy, this means teams 
+            should not rely on "average" reception alone, but instead combine baseline quality with stronger positioning, timing, and campaign 
+            execution to move titles into higher-performing outcomes.</p>
+        </div>
+
+        <!-- V2 (formerly V1): Genre polarization (Logan) -->
         <div class="viz-block">
           <h3>Genre rating polarization &amp; distribution</h3>
           <p class="viz-desc">Shows how strongly audiences disagree across genres using rating variance and full star distributions. Use it to identify which genres are most polarizing versus most consensus-driven.</p>
@@ -156,10 +164,10 @@
              campaigns built around broad messaging and larger opening-weekend reach.</p>
         </div>
 
-        <!-- V2: Rating vs reviews quadrant scatter (Zach — interactive) -->
+        <!-- V3 (formerly V2): Rating vs reviews quadrant scatter (Zach — interactive, brush+link) -->
         <div class="viz-block">
           <h3>Rating vs. review volume — quadrant analysis</h3>
-          <p class="viz-desc">Shows the relationship between audience rating and review volume for the 150 most-reviewed films. Use hover to inspect the exact film-level values within each quadrant.</p>
+          <p class="viz-desc">Shows the relationship between audience rating and review volume for the 150 most-reviewed films. Drag to brush-select a region — the genre distribution chart below updates to show the genres within your selection.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/scatter_rating_reviews.html" title="Scatter plot: rating vs reviews"></iframe>
           </div>
@@ -172,40 +180,23 @@
               alignment between budget size and expected audience behavior.</p>
         </div>
 
-        <!-- V3: D3 rating distribution -->
+        <!-- V4: Language scatter — non-English only, text marks (Saeyoung — interactive) -->
         <div class="viz-block">
-          <h3>Distribution of movie ratings (D3 view)</h3>
-          <p class="viz-desc">Shows the same rating distribution using a D3 implementation, including bin structure, axes, and median marker. 
-            Use it to validate patterns seen in the static histogram and compare how presentation affects interpretation.</p>
-          <div class="viz-iframe-wrap">
-            <iframe src="d3vis.html" title="D3 histogram of movie ratings"></iframe>
-          </div>
-          <p class="viz-note"><strong>Takeaway:</strong> Embedding the D3 view confirms the central pattern that most films cluster 
-            in the middle of the rating range, with relatively few extreme outcomes. The median marker reinforces where audience sentiment 
-            is concentrated, which is useful for setting realistic quality targets before release. For box office strategy, this means teams 
-            should not rely on "average" reception alone, but instead combine baseline quality with stronger positioning, timing, and campaign e
-            xecution to move titles into higher-performing outcomes.</p>
-        </div>
-
-        <!-- V4: Language scatter — rating vs watches (Saeyoung — interactive) -->
-        <div class="viz-block">
-          <h3>Average rating vs. watch count by language</h3>
-          <p class="viz-desc">Shows how language compares across watch volume and average rating for the top 20 groups. Use the side-by-side panels to compare the full view with and without the English outlier.</p>
+          <h3>Average rating vs. watch count by language (non-English)</h3>
+          <p class="viz-desc">Shows how the top 20 non-English language markets compare across watch volume and average rating. Language names are plotted directly as text marks for clarity.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/language_rating_scatter.html" title="Scatter: rating vs watches by language"></iframe>
           </div>
           <p class="viz-note"><strong>Takeaway:</strong> This view shows a consistent tradeoff between scale and average reception across language markets. 
-            English-language films dominate total watch volume, which reflects distribution advantage and larger existing demand funnels, but several non-English 
-            clusters show equal or stronger rating quality. For growth strategy, that gap represents opportunity: high-rated non-English content can expand total 
-            box office when supported with localized marketing, subtitling and dubbing quality, and stronger theater placement. The two-panel structure is important 
-            because it prevents the English outlier from hiding meaningful differences among non-English segments. In practice, this chart supports region-specific
-             acquisition and release planning rather than a one-size-fits-all global model.</p>
+            Several non-English clusters show equal or stronger rating quality relative to their watch volume, pointing to under-monetized markets. For growth strategy, 
+            that gap represents opportunity: high-rated non-English content can expand total box office when supported with localized marketing, subtitling and dubbing quality, 
+            and stronger theater placement. In practice, this chart supports region-specific acquisition and release planning rather than a one-size-fits-all global model.</p>
         </div>
 
         <!-- V5: Top 10 films by language & genre (Saeyoung — interactive) -->
         <div class="viz-block">
           <h3>Top 10 rated films by language &amp; genre</h3>
-          <p class="viz-desc">Shows the top 10 highest-rated films for the selected language and genre combination. Use the dropdown filters to quickly switch contexts and compare ranked results.</p>
+          <p class="viz-desc">Shows the top 10 highest-rated films for the selected language and genre combination across the top 20 non-English language markets. Use the dropdown filters to quickly switch contexts and compare ranked results.</p>
           <div class="viz-iframe-wrap">
             <iframe src="images/top_films_by_language.html" title="Top 10 films by language and genre"></iframe>
           </div>
@@ -238,7 +229,7 @@
           </div>
           <div class="summary-card">
             <h3>Conclusion 3: Language patterns reveal market opportunities</h3>
-            <p>Language comparisons suggest that broad reach still favors English releases, but quality signals are strong across multiple non-English markets.
+            <p>Language comparisons suggest that quality signals are strong across multiple non-English markets.
                The growth path is not only producing more content, but improving cross-market discoverability through localization, scheduling, and recommendation placement. 
                Future work should add time-series and release-window analysis to quantify when high-rated non-English films can most effectively convert into box office growth.</p>
           </div>
@@ -246,7 +237,6 @@
       </div>
     </section>
 
-    <!-- Data source footer band -->
     <section class="data-band">
       <div class="section-inner">
         <span class="mono data-label">Dataset</span>
